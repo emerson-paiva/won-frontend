@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 import Logo from 'components/Logo'
-import 'jest-styled-components'
 
 describe('<Logo />', () => {
   it('should render a white label by default', () => {

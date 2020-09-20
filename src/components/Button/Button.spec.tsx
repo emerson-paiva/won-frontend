@@ -1,7 +1,6 @@
 import Button from 'components/Button'
 import { renderWithTheme } from 'utils/tests/helpers'
 import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart'
-import 'jest-styled-components'
 
 describe('<Button />', () => {
   it('should render the medium size by default', () => {
