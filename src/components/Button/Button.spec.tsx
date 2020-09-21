@@ -49,4 +49,17 @@ describe('<Button />', () => {
     expect(getByText(/buy now/i)).toBeInTheDocument()
     expect(getByTestId('icon')).toBeInTheDocument()
   })
+
+  it('should render Button as a link', () => {
+    const { getByRole } = renderWithTheme(
+      <Button as="a" href="/link">
+        Buy now
+      </Button>
+    )
+
+    expect(getByRole('link', { name: /buy now/i })).toHaveAttribute(
+      'href',
+      '/link'
+    )
+  })
 })
