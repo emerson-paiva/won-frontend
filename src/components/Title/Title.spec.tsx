@@ -29,7 +29,7 @@ describe('<Title />', () => {
     const { getByRole } = renderWithTheme(<Title lineLeft>Won Games</Title>)
 
     expect(getByRole('heading', { name: /won games/i })).toHaveStyle({
-      'border-left': '0.7rem solid #3cd3c1'
+      'border-left': '0.7rem solid #f231a5'
     })
   })
 
@@ -43,5 +43,13 @@ describe('<Title />', () => {
         modifier: '::after'
       }
     )
+  })
+
+  it('should render a heading with a small size', () => {
+    renderWithTheme(<Title size="small">Won Games</Title>)
+
+    expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
+      'font-size': '1.6rem'
+    })
   })
 })
