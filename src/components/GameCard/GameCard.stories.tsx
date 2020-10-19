@@ -9,6 +9,14 @@ export default {
     developer: 'Rockstar Games',
     img: 'https://source.unsplash.com/user/guillaume_t/340x140',
     price: 'R$ 235,00'
+  },
+  argTypes: {
+    onFav: { action: 'clicked' }
+  },
+  parameters: {
+    backgrounds: {
+      default: 'dark'
+    }
   }
 } as Meta
 
