@@ -1,7 +1,7 @@
-import Main from 'components/Main'
+import Home from 'templates/Home'
 
-function Home() {
-  return <Main />
+function Index() {
+  return <Home />
 }
 
-export default Home
+export default Index
