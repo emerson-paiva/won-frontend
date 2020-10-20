@@ -3,7 +3,7 @@ import {{pascalCase name}} from '.'
 
 describe('<{{pascalCase name}} />', () => {
   it('should render the heading', () => {
-    const { container } = render(<{{pascalCase name}} />)
+    const { container, getByRole } = render(<{{pascalCase name}} />)
 
     expect(getByRole('heading', { name: /{{pascalCase name}}/i }))
     expect(container.firstChild).toMatchSnapshot()
