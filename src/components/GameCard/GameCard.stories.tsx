@@ -1,15 +1,11 @@
 import { Meta, Story } from '@storybook/react/types-6-0'
 import GameCard, { GameCardProps } from '.'
+import item from './GameCard.mock'
 
 export default {
   title: 'GameCard',
   component: GameCard,
-  args: {
-    title: 'Population Zero',
-    developer: 'Rockstar Games',
-    img: 'https://source.unsplash.com/user/guillaume_t/340x140',
-    price: 'R$ 235,00'
-  },
+  args: { ...item },
   argTypes: {
     onFav: { action: 'clicked' }
   },
