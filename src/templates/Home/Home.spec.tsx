@@ -1,11 +1,20 @@
-import { render } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 import Home from '.'
 
 describe('<Home />', () => {
-  it('should render the heading', () => {
-    const { container, getByRole } = render(<Home />)
+  it('should render menu and footer', () => {
+    const { getByLabelText, getByRole } = renderWithTheme(<Home />)
 
-    expect(getByRole('heading', { name: /Home/i }))
-    expect(container.firstChild).toMatchSnapshot()
+    expect(getByLabelText(/open menu/i)).toBeInTheDocument()
+    expect(getByRole('heading', { name: /contact/i })).toBeInTheDocument()
+  })
+
+  it('should render the sections', () => {
+    const { getByRole } = renderWithTheme(<Home />)
+
+    expect(getByRole('heading', { name: /news/i })).toBeInTheDocument()
+    expect(getByRole('heading', { name: /most popular/i })).toBeInTheDocument()
+    expect(getByRole('heading', { name: /upcomming/i })).toBeInTheDocument()
+    expect(getByRole('heading', { name: /free games/i })).toBeInTheDocument()
   })
 })
