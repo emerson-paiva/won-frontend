@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { CheckboxProps } from '.'
+import { CheckboxProps } from './Checkbox'
 
 export const Wrapper = styled.div`
   display: flex;
