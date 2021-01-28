@@ -6,6 +6,8 @@ export type CheckboxProps = {
   label?: string
   labelColor?: 'white' | 'black'
   labelFor?: string
+  isChecked?: boolean
+  value?: string | ReadonlyArray<string> | number
 } & InputHTMLAttributes<HTMLInputElement>
 
 const Checkbox = ({
@@ -13,17 +15,17 @@ const Checkbox = ({
   label,
   labelColor = 'white',
   labelFor = '',
+  isChecked = false,
+  value,
   ...props
 }: CheckboxProps) => {
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(isChecked)
 
   const onChange = () => {
     const status = !checked
     setChecked(status)
 
-    if (onCheck) {
-      onCheck(status)
-    }
+    !!onCheck && onCheck(status)
   }
 
   return (
@@ -33,6 +35,7 @@ const Checkbox = ({
         type="checkbox"
         onChange={onChange}
         checked={checked}
+        value={value}
         {...props}
       />
       {!!label && (
