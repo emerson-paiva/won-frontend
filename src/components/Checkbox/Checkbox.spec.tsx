@@ -5,13 +5,14 @@ import Checkbox from './Checkbox'
 
 describe('<Checkbox />', () => {
   it('should render with label', () => {
-    const { getByRole, getByText, getByLabelText } = renderWithTheme(
+    const { container, getByRole, getByText, getByLabelText } = renderWithTheme(
       <Checkbox label="Checkbox Label" labelFor="check" name="checkbox" />
     )
 
     expect(getByRole('checkbox')).toBeInTheDocument()
     expect(getByLabelText(/checkbox label/i)).toBeInTheDocument()
     expect(getByText(/checkbox label/i)).toHaveAttribute('for', 'check')
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render without label', () => {
