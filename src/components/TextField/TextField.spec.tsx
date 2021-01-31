@@ -1,5 +1,6 @@
 import { waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { Email } from '@styled-icons/material-outlined'
 import { renderWithTheme } from 'utils/tests/helpers'
 import TextField from './TextField'
 
@@ -24,6 +25,14 @@ describe('<TextField />', () => {
     )
 
     expect(queryByPlaceholderText('Placeholder')).toBeInTheDocument()
+  })
+
+  it('should render with Icon', () => {
+    const { getByTestId } = renderWithTheme(
+      <TextField icon={<Email data-testid="icon" />} />
+    )
+
+    expect(getByTestId('icon')).toBeInTheDocument()
   })
 
   it('should call onChange when typing value', async () => {
