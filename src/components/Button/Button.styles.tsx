@@ -4,7 +4,7 @@ import { darken } from 'polished'
 
 // Obtendo propriedades - existe tambem o Omit para pegar tudo e excluir outros
 // e usando o Union com & para adicionar outras props
-type WrapperProps = { hasIcon: boolean } & Pick<
+export type WrapperProps = { hasIcon: boolean } & Pick<
   ButtonProps,
   'size' | 'fullWidth' | 'minimal'
 >
