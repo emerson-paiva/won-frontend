@@ -52,4 +52,12 @@ describe('<Title />', () => {
       'font-size': '1.6rem'
     })
   })
+
+  it('should render a heading with a huge size', () => {
+    renderWithTheme(<Title size="huge">Won Games</Title>)
+
+    expect(screen.getByRole('heading', { name: /won games/i })).toHaveStyle({
+      'font-size': '5.2rem'
+    })
+  })
 })

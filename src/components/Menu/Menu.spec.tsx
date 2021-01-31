@@ -35,9 +35,9 @@ describe('<Menu />', () => {
   })
 
   it('should show register box when logged out', () => {
-    const { getByText, queryByText } = renderWithTheme(<Menu />)
+    const { getByText, queryByText, getAllByText } = renderWithTheme(<Menu />)
 
-    expect(getByText(/log in now/i)).toBeInTheDocument()
+    expect(getAllByText(/sign in/i)).toHaveLength(2)
     expect(getByText(/sign up/i)).toBeInTheDocument()
     expect(queryByText(/my account/i)).not.toBeInTheDocument()
     expect(queryByText(/wishlist/i)).not.toBeInTheDocument()
@@ -50,7 +50,7 @@ describe('<Menu />', () => {
 
     expect(getByText(/my account/i)).toBeInTheDocument()
     expect(getByText(/wishlist/i)).toBeInTheDocument()
-    expect(queryByText(/log in now/i)).not.toBeInTheDocument()
+    expect(queryByText(/sign in/i)).not.toBeInTheDocument()
     expect(queryByText(/sign up/i)).not.toBeInTheDocument()
   })
 })
