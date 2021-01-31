@@ -3,7 +3,7 @@ import { Email } from '@styled-icons/material-outlined'
 import TextField, { TextFieldProps } from './TextField'
 
 export default {
-  title: 'TextField',
+  title: 'Form/TextField',
   component: TextField,
   args: {
     label: 'E-mail',
@@ -32,4 +32,15 @@ export const WithIcon: Story<TextFieldProps> = (args) => (
 
 WithIcon.args = {
   icon: <Email />
+}
+
+export const WithError: Story<TextFieldProps> = (args) => (
+  <div style={{ maxWidth: 300, padding: 15 }}>
+    <TextField {...args} />
+  </div>
+)
+
+WithError.args = {
+  icon: <Email />,
+  error: 'Ops...something is wrong'
 }

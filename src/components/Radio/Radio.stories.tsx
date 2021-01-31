@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/react/types-6-0'
 import Radio, { RadioProps } from './Radio'
 
 export default {
-  title: 'Radio',
+  title: 'Form/Radio',
   component: Radio,
   parameters: {
     backgrounds: {

@@ -97,4 +97,18 @@ describe('<TextField />', () => {
     userEvent.tab()
     expect(getByRole('textbox')).not.toHaveFocus()
   })
+
+  it('should render error message', () => {
+    const { container, getByText } = renderWithTheme(
+      <TextField
+        icon={<Email data-testid="icon" />}
+        label="TextField"
+        labelFor="TextField"
+        error="Something is wrong"
+      />
+    )
+
+    expect(getByText('Something is wrong')).toBeInTheDocument()
+    expect(container.firstChild).toMatchSnapshot()
+  })
 })
