@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Button, ButtonProps } from '.'
+import { MdOutlineAddShoppingCart } from 'react-icons/md'
 
 export default {
   title: 'Button',
@@ -9,5 +10,12 @@ export default {
 export const Default: StoryObj<ButtonProps> = {
   args: {
     children: 'Buy now'
+  }
+}
+
+export const WithIcon: StoryObj<ButtonProps> = {
+  args: {
+    children: 'Buy now',
+    icon: <MdOutlineAddShoppingCart />
   }
 }

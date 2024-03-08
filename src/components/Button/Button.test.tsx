@@ -1,7 +1,8 @@
 import { screen } from '@testing-library/react'
+import { renderWithTheme } from '@/utils/tests/helpers'
+import { MdOutlineAddShoppingCart } from 'react-icons/md'
 
 import { Button } from '.'
-import { renderWithTheme } from '@/utils/tests/helpers'
 
 describe('<Button />', () => {
   it('should render the medium size by default', () => {
@@ -39,5 +40,16 @@ describe('<Button />', () => {
     expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyle({
       width: '100%'
     })
+  })
+
+  it('should render an icon version', () => {
+    renderWithTheme(
+      <Button icon={<MdOutlineAddShoppingCart data-testid="icon" />}>
+        Buy now
+      </Button>
+    )
+
+    expect(screen.getByText(/buy now/i)).toBeInTheDocument()
+    expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
 })
