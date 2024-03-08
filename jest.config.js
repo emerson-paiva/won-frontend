@@ -17,6 +17,7 @@ module.exports = {
   },
   moduleNameMapper: {
     '^styled-components':
-      'styled-components/dist/styled-components.browser.cjs.js'
+      'styled-components/dist/styled-components.browser.cjs.js',
+    '@/(.*)': '<rootDir>/src/$1'
   }
 }
