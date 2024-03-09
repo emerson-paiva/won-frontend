@@ -13,6 +13,10 @@ const config: StorybookConfig = {
   },
   webpackFinal: (config) => {
     config.resolve?.modules?.push(`${process.cwd()}/src`)
+    config.resolve!.alias = {
+      ...config.resolve?.alias,
+      '@/components': `${process.cwd()}/src/components`
+    }
     return config
   }
 }
