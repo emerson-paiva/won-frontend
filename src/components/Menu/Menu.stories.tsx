@@ -6,4 +6,11 @@ export default {
   component: Menu
 } as Meta
 
-export const Default: StoryObj = {}
+export const Default: StoryObj = {
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'dark'
+    }
+  }
+}
